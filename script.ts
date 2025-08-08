@@ -1,3 +1,22 @@
+import EmblaCarousel, { EmblaOptionsType } from 'embla-carousel'
+import AutoScroll from 'embla-carousel-auto-scroll'
+import { addPrevNextBtnsClickHandlers } from './EmblaCarouselArrowButtons'
+import {
+  addPlayBtnListeners,
+  addNavBtnListeners
+} from './EmblaCarouselAutoScroll'
+import './css/base.css'
+import './css/sandbox.css'
+import './css/embla.css'
+// Carousel
+const OPTIONS: EmblaOptionsType = { loop: true }
+
+const emblaNode = <HTMLElement>document.querySelector('.embla')
+const viewportNode = <HTMLElement>emblaNode.querySelector('.embla__viewport')
+const prevBtn = <HTMLElement>emblaNode.querySelector('.embla__button--prev')
+const nextBtn = <HTMLElement>emblaNode.querySelector('.embla__button--next')
+const playBtn = <HTMLElement>document.querySelector('.embla__play')
+// Original Functionality
 const reels: NodeListOf<HTMLVideoElement> = document.querySelectorAll('video');
 const carousels: NodeListOf<HTMLDivElement> = document.querySelectorAll(".div-carousel");
 const buttonLeft : HTMLImageElement | null = document.querySelector('#left.svg');
@@ -34,22 +53,21 @@ carousels.forEach((carousel) => {
     carousel.scrollTo(scrollCenter, 0)
 });
 
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  addAnimation();
-}
+const emblaApi = EmblaCarousel(viewportNode, OPTIONS, [
+  AutoScroll({ playOnInit: false })
+])
 
-function addAnimation() {
-    carousels.forEach((carousel) => {
-    carousel.setAttribute("data-animated", 'true');
+const removePrevNextBtnsClickHandlers = addPrevNextBtnsClickHandlers(
+  emblaApi,
+  prevBtn,
+  nextBtn
+)
+const removePlayBtnListeners = addPlayBtnListeners(emblaApi, playBtn)
+const removeNavBtnListeners = addNavBtnListeners(emblaApi, prevBtn, nextBtn)
 
-    const carouselContainer = carousel.querySelector(".div-carousel-container");
-    const scrollerContent = Array.from(carouselContainer!.children);
-
-    scrollerContent.forEach((item) => {
-      const duplicatedItem = item.cloneNode(true);
-      (duplicatedItem as Element).setAttribute("aria-hidden", 'true');
-      carouselContainer!.appendChild(duplicatedItem);
-    });
-  });
-}
+emblaApi
+  .on('destroy', removePrevNextBtnsClickHandlers)
+  .on('destroy', removePlayBtnListeners)
+  .on('destroy', removeNavBtnListeners)
+ 
 

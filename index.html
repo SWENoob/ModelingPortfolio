@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href = "style.css">
+    <link rel="stylesheet" type="text/css" href = "/css/base.css">
+    <link rel="stylesheet" type="text/css" href = "/css/embla.css">
+    <link rel="stylesheet" type="text/css" href = "/css/sandbox.css">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -11,8 +14,8 @@
             <span class="site-title">Jasmine Pagkaliwangan&nbsp;</span>
         </div>
     </header>
-    <div class="parallax">
-
+    <div class="div-mask_1">
+      <img src="pictures/mask_1.jpg" class="mask_1"">
     </div>
         <div class="container">
             <h2 class="section-title">Lorem ipsum dolor sit amet.</h2>
@@ -98,5 +101,61 @@
                 </div>
             </div>
         </div>
+    <div class="embla">
+      <div class="embla__viewport">
+        <div class="embla__container">
+          <div class="embla__slide">
+            <div class="embla__slide__number"><video width="175" height="296" class="reel" muted src="videos/spacetime.mp4" data-src="https://www.instagram.com/p/DM29BvWzp4k/" type="video/mp4"></video>  
+          </div>
+          <div class="embla__slide">
+            <div class="embla__slide__number"><span>2</span></div>
+          </div>
+          <div class="embla__slide">
+            <div class="embla__slide__number"><span>3</span></div>
+          </div>
+          <div class="embla__slide">
+            <div class="embla__slide__number"><span>4</span></div>
+          </div>
+          <div class="embla__slide">
+            <div class="embla__slide__number"><span>5</span></div>
+          </div>
+          <div class="embla__slide">
+            <div class="embla__slide__number"><span>6</span></div>
+          </div>
+          <div class="embla__slide">
+            <div class="embla__slide__number"><span>7</span></div>
+          </div>
+          <div class="embla__slide">
+            <div class="embla__slide__number"><span>8</span></div>
+          </div>
+        </div>
+      </div>
+            <div class="embla__controls">
+        <div class="embla__buttons">
+            <button
+                class="embla__button embla__button--prev"
+                type="button"
+                disabled=""
+            >
+                <svg width="50px" height="50px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z" fill="#000000" />
+                </svg>
+            </button>
+            <button
+                class="embla__button embla__button--next"
+                type="button"
+                disabled=""
+            >
+            <svg class="embla__button__svg" viewBox="0 0 532 532">
+              <path
+                fill="currentColor"
+                d="M176.34 520.646c-13.793 13.805-36.208 13.805-50.001 0-13.785-13.804-13.785-36.238 0-50.034L330.78 266 126.34 61.391c-13.785-13.805-13.785-36.239 0-50.044 13.793-13.796 36.208-13.796 50.002 0 22.928 22.947 206.395 206.507 229.332 229.454a35.065 35.065 0 0 1 10.326 25.126c0 9.2-3.393 18.26-10.326 25.2-45.865 45.901-206.404 206.564-229.332 229.52Z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <button class="embla__play" type="button">Start</button>
+      </div>
+    </div>
 </body>
 </html>
