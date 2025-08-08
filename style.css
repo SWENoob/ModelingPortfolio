@@ -1,0 +1,167 @@
+
+
+.site-header {
+    background-image: url("/pictures/30237.gif");
+    background-position: bottom;
+    background-size: cover;
+    /* background-attachment: fixed; */
+    padding: 5rem;
+    min-height: 70vh;
+    position: relative;
+}
+
+.site-title {
+    display: inline-block; 
+    width: 100%;
+    font-size: clamp(4rem, 10vw + 0.5rem, 9rem);
+    font-weight: 900;
+    line-height: 1;
+    /* position: fixed; */
+  }
+
+.site-descr {
+    display: inline-block; 
+    width: 100%;
+    font-size: clamp(4rem, 10vw + 0.5rem, 9rem);
+    font-weight: 900;
+    /* line-height: 1; */
+    position: fixed;
+}
+
+.div-instagram-container {
+    background-color: white;
+    line-height:normal; 
+    text-align:center; 
+    font-size:60px;
+    letter-spacing:0.10em;
+    display:block;
+    justify-content: center;
+    align-items: center;
+    min-width: 1600;
+    min-height: 600;
+}
+
+.div-header-instagram {
+    background-color: #171717;
+    min-width: 700px;
+    max-width: 700px;
+    min-height: 100px;
+    /* min-height: 250px; */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.instagram-header {
+    font-size: 38px;
+}
+
+.instagram-header-latest {
+    font-family:Helvetica, sans-serif;
+    color: whitesmoke;
+}
+
+.instagram-header-videos {
+    font-family:Garamond, serif;
+    color: whitesmoke;
+    font-weight: 100;
+}
+
+.icon {
+    background-color: #F3F3F2;
+}
+
+.div-instagram-content {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-type: x mandatory;
+    background-color: #F3F3F2;
+    min-height: 450px;
+    width: 1005px;
+}
+
+.div-carousel {
+    width: 700px;
+    overflow: hidden;
+    scroll-snap-align: center;
+}
+
+.div-carousel-container {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    width: 100%;
+
+    position: relative;
+    padding: 0;
+    margin: 0;
+
+    overflow: hidden;
+    /* overflow-x: auto; */
+    min-height: 365;  
+    width: 902px;
+    /* gap: 2.5; */
+    /* transform: translate(-50%,-50%) */
+    scroll-behavior: smooth;
+    block: center;
+}
+
+.div-carousel-container li {
+    list-style-type: none;
+    width: 175px;
+    height: 296px;
+    /* opacity: .25; */
+    /* width: 190px;
+    height: 321px; */
+    position: relative;
+    border-radius: 2px;
+    transition: transform 2s, opacity 2s;
+}
+
+video {
+    cursor: pointer;
+    /* width: 190;
+    height: 321; */
+}
+
+.svg {
+    width: 65px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.div-carousel[data-animated="true"] {
+    overflow: hidden;
+}
+  
+.div-carousel[data-animated="true"] .div-carousel__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 40s)
+        var(--_animation-direction, forwards) linear infinite;
+}
+  
+.div-carousel[data-direction="right"] {
+    --_animation-direction: reverse;
+}
+
+.div-carousel[data-direction="left"] {
+    --_animation-direction: forwards;
+}
+
+.div-carousel[data-speed="fast"] {
+    --_animation-duration: 20s;
+}
+
+.div-carousel[data-speed="slow"] {
+    --_animation-duration: 60s;
+}
+
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 0.5rem));
+    }
+}
